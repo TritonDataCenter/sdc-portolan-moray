@@ -5,19 +5,20 @@
 -->
 
 <!--
-    Copyright (c) 2014, Joyent, Inc.
+    Copyright (c) 2016, Joyent, Inc.
 -->
 
 # sdc-portolan-moray
 
-This repository is part of the Joyent SmartDataCenter project (SDC). For
-contribution guidelines, issues, and general documentation, visit the main
-[SDC](http://github.com/joyent/sdc) project page.
+This repository is part of the Joyent Triton project. See the [contribution
+guidelines](https://github.com/joyent/triton/blob/master/CONTRIBUTING.md) --
+*Triton does not use GitHub PRs* -- and general documentation at the main
+[Triton project](https://github.com/joyent/triton) page.
 
-This is a helper module for reading and writing to the portolan moray buckets.
-It is used by [NAPI](https://github.com/joyent/sdc-napi) as a producer, and
-[portolan](https://github.com/joyent/sdc-portolan) as a consumer. See those
-repos for tests and further information.
+Portolan Moray is the helper module for reading and writing to the portolan
+moray buckets. It is used by [NAPI](https://github.com/joyent/sdc-napi) as a
+producer, and [portolan](https://github.com/joyent/sdc-portolan) as a
+consumer. See those repos for tests and further information.
 
 
 ## Development
