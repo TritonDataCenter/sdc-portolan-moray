@@ -5,12 +5,14 @@
  */
 
 /*
- * Copyright (c) 2015, Joyent, Inc.
+ * Copyright 2016, Joyent, Inc.
  */
 
 /*
  * Basic API tests
  */
+
+'use strict';
 
 var mod_pm = require('../lib');
 var test = require('tape');

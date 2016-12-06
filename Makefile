@@ -5,7 +5,7 @@
 #
 
 #
-# Copyright (c) 2015, Joyent, Inc.
+# Copyright 2016, Joyent, Inc.
 #
 
 #
@@ -32,6 +32,9 @@ JSL_CONF_NODE	 = tools/jsl.node.conf
 JSL_FILES_NODE	 = $(JS_FILES)
 JSSTYLE_FILES	 = $(JS_FILES)
 JSSTYLE_FLAGS	 = -f tools/jsstyle.conf
+ESLINT		 = ./node_modules/.bin/eslint
+ESLINT_CONF	 = tools/eslint.node.conf
+ESLINT_FILES	 = $(JS_FILES)
 
 
 #
@@ -41,6 +44,9 @@ JSSTYLE_FLAGS	 = -f tools/jsstyle.conf
 .PHONY: all
 all: | $(TAPE)
 	$(NPM) rebuild
+
+$(ESLINT): | $(NPM_EXEC)
+	$(NPM) install
 
 $(TAPE):
 	$(NPM) install
@@ -54,6 +60,10 @@ test: $(TAPE)
 		$(NODE_EXEC) $(TAPE) $$F ;\
 		[[ $$? == "0" ]] || exit 1; \
 	done)
+
+.PHONY: check
+check:: $(ESLINT)
+	$(ESLINT) -c $(ESLINT_CONF) $(ESLINT_FILES)
 
 
 #
