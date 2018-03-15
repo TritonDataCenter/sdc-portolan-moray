@@ -5,7 +5,7 @@
 #
 
 #
-# Copyright 2016, Joyent, Inc.
+# Copyright 2018, Joyent, Inc.
 #
 
 #
@@ -51,7 +51,7 @@ $(ESLINT): | $(NPM_EXEC)
 $(TAPE):
 	$(NPM) install
 
-CLEAN_FILES += $(TAP) ./node_modules/tap
+CLEAN_FILES += ./node_modules/
 
 .PHONY: test
 test: $(TAPE)

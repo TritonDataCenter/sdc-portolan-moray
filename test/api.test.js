@@ -5,7 +5,7 @@
  */
 
 /*
- * Copyright 2016, Joyent, Inc.
+ * Copyright 2018, Joyent, Inc.
  */
 
 /*
@@ -25,7 +25,7 @@ var test = require('tape');
 
 test('buckets exposed', function (t) {
     t.ok(mod_pm.buckets, 'buckets exposed');
-    [ 'mac_ip', 'underlay', 'net_events' ].forEach(function (b) {
+    [ 'mac_ip', 'underlay', 'net_events', 'vnet_routes' ].forEach(function (b) {
         t.ok(mod_pm.buckets[b], b + ' bucket');
     });
 
